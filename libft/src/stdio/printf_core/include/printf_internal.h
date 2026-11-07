@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 23:25:47 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 05:03:05 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 05:12:12 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,15 @@ enum e_type
 	PTR,
 };
 
-typedef union u_arg
+typedef struct s_arg
 {
 	enum e_type		type;
-	int				i;
-	unsigned int	u;
-	void			*p;
+	union
+	{
+		int				i;
+		unsigned int	u;
+		void			*p;
+	};
 }	t_arg;
 
 typedef struct s_option
