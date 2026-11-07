@@ -17,7 +17,7 @@
 # include "sys/types.h"
 
 long	ft_syscall(long number, ...);
-int		ft_close(int fildes);
+// int		ft_close(int fildes);
 ssize_t	ft_read(int fildes, const void *buf, size_t nbyte);
 ssize_t	ft_write(int fildes, const void *buf, size_t nbyte);
 
