@@ -6,13 +6,13 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 06:01:19 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/07 21:07:05 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/07 23:03:11 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TYPES_H
 # define TYPES_H
 
-typedef int	t_ssize;
+typedef long int	t_ssize;
 
 #endif

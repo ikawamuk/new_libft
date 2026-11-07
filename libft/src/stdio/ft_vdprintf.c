@@ -6,16 +6,29 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 20:53:41 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/07 21:46:09 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/07 23:19:38 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/stdio.h"
+#include "libft/limits.h"
+
+long	printf_core(int fd, const char **fmt, va_list ap);
 
 int	ft_vdprintf(int fd, const char *format, va_list ap)
 {
-	(void)fd;
-	(void)format;
-	(void)ap;
-	return (0);
+	long	total_len;
+	long	output_count;
+
+	total_len = 0;
+	while (*format)
+	{
+		output_count = printf_core(fd, &format, ap);
+		if (output_count < 0)
+			return (-1);
+		if (output_count > INT_MAX - total_len)
+			return (-1);
+		total_len += output_count;
+	}
+	return (total_len);
 }
