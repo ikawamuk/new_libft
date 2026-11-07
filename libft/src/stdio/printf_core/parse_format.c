@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/08 01:41:08 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 03:09:46 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 03:33:01 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,25 @@ static int	parse_width(t_option *option, const char **fmt);
 static int	parse_precision(t_option *option, const char **fmt);
 static int	parse_conversion(t_option *option, const char **fmt);
 
+static const unsigned char	g_conversion_table['z' - 'A' + 1] = {
+['c' - 'A'] = CHAR,
+['d' - 'A'] = INT,
+['i' - 'A'] = INT,
+['u' - 'A'] = U_INT,
+['x' - 'A'] = HEX_LOW,
+['X' - 'A'] = HEX_UP,
+['s' - 'A'] = STR,
+['p' - 'A'] = PTR
+};
+
+static const unsigned char	g_flag_table[128] = {
+['#'] = ALT_FORM,
+['0'] = ZERO_PAD,
+['-'] = LEFT_ADJ,
+[' '] = PAD_POS,
+['+'] = SIGNED,
+};
+
 int	parse_format(t_option *option, const char **fmt)
 {
 	parse_flag(option, fmt);
@@ -36,8 +55,16 @@ int	parse_format(t_option *option, const char **fmt)
 
 static void	parse_flag(t_option *option, const char **fmt)
 {
-	while (**fmt - ' ' < 32 && FLAGMASK & (1U << **fmt - ' '))
-		option->flag |= 1U << *(*fmt++) - ' ';
+	unsigned char	flag_bit;
+
+	while (1)
+	{
+		flag_bit = g_flag_table[**fmt];
+		if (!flag_bit)
+			break ;
+		option->flag |= flag_bit;
+		++(*fmt);
+	}
 }
 
 static int	parse_width(t_option *option, const char **fmt)
@@ -45,7 +72,7 @@ static int	parse_width(t_option *option, const char **fmt)
 	if (**fmt == '*')
 	{
 		++*fmt;
-		option->arg_width = TRUE;
+		option->arg_width = true;
 		return (0);
 	}
 	option->width = parse_int(fmt);
@@ -64,10 +91,10 @@ static int	parse_precision(t_option *option, const char **fmt)
 		option->precision = -1;
 		return (0);
 	}
-	if (fmt[0] = '.' && fmt[1] == '*')
+	if (fmt[0] == '.' && fmt[1] == '*')
 	{
 		*fmt += 2;
-		option->arg_precision = TRUE;
+		option->arg_precision = true;
 		return (-1);
 	}
 	++(*fmt);
@@ -87,7 +114,7 @@ static int	parse_conversion(t_option *option, const char **fmt)
 		g_ft_errno = EINVAL;
 		return (-1);
 	}
-	option->conversion = conversion_table[**fmt];
+	option->conversion = g_conversion_table[**fmt];
 	if (!option->conversion)
 	{
 		g_ft_errno = EINVAL;

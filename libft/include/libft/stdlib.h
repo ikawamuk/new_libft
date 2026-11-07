@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 06:04:53 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/07 21:34:53 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 03:15:47 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "stddef.h"
 
-int	ft_atoi(const char *nptr);
+int		ft_atoi(const char *nptr);
 
 void	*ft_malloc(t_size size);
 void	ft_free(void *ptr);

@@ -6,18 +6,18 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 23:48:52 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/07 23:50:43 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 03:45:19 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/stdarg.h"
 #include "printf_internal.h"
 
-void	pop_varg(t_arg *arg, int type, va_list ap)
+void	pop_varg(t_arg *arg, enum e_type type, va_list ap)
 {
 	if (type == CHAR)
 		arg->i = va_arg(ap, int);
-	else if (type == DEC)
+	else if (type == INT)
 		arg->i = va_arg(ap, int);
 	else if (type == U_INT)
 		arg->u = va_arg(ap, unsigned int);
