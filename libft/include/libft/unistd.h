@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 05:49:26 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/07 21:07:16 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/07 21:27:28 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@
 # include "stddef.h"
 # include "sys/types.h"
 
-long	ft_syscall(long number, ...);
-// int		ft_close(int fildes);
-t_ssize	ft_read(int fildes, const void *buf, size_t nbyte);
-t_ssize	ft_write(int fildes, const void *buf, size_t nbyte);
+t_ssize	ft_read(int fildes, const void *buf, t_size nbyte);
+t_ssize	ft_write(int fildes, const void *buf, t_size nbyte);
 
 #endif
