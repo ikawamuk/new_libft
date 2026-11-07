@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 23:25:47 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/07 23:50:24 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 01:28:21 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,13 @@ enum e_type
 	PTR,
 	PERCENT
 };
+
+typedef struct s_option
+{
+	unsigned int	flag;
+	int				width;
+	int				precision;
+	enum e_type		type;
+}	t_option;
 
 #endif
