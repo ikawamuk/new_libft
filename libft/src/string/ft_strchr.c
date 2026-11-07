@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 03:02:32 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/07 03:08:48 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/07 21:30:26 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ char	*ft_strchr(const char *s, int c)
 		++s;
 	if (*s)
 		return ((char *)s);
-	return (NULL);
+	return (FT_NULL);
 }

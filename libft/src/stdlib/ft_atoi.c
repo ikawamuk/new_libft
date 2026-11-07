@@ -6,11 +6,12 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 19:38:35 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/07 20:55:54 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/07 21:42:01 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/stdlib.h"
+#include "libft/ctype.h"
 
 int	ft_atoi(const char *str)
 {

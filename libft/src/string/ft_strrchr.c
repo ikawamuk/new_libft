@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 04:45:30 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/07 04:49:15 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/07 21:30:34 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	len;
+	t_size	len;
 
 	len = ft_strlen(s);
 	if (!c)
@@ -22,5 +22,5 @@ char	*ft_strrchr(const char *s, int c)
 	while (len--)
 		if (s[len] == (char )c)
 			return ((char *)&s[len]);
-	return (NULL);
+	return (FT_NULL);
 }

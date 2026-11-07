@@ -6,13 +6,13 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 03:00:18 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/07 03:02:04 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/07 21:30:34 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/string.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, t_size n)
 {
 	unsigned char	*p;
 

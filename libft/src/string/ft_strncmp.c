@@ -6,13 +6,13 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 03:29:06 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/07 03:36:41 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/07 21:30:34 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/string.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, t_size n)
 {
 	if (n == 0)
 		return (0);

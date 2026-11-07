@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 04:31:24 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/07 05:20:37 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/07 21:41:34 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strstr(const char *haystack, const char *needle)
 {
-	size_t	needle_len;
+	t_size	needle_len;
 
 	if (!*needle)
 		return ((char *)haystack);
@@ -23,8 +23,8 @@ char	*ft_strstr(const char *haystack, const char *needle)
 	{
 		if (*haystack == *needle)
 			if (!ft_strncmp(haystack, needle, needle_len))
-				return (haystack);
+				return ((char *)haystack);
 		++haystack;
 	}
-	return (NULL);
+	return (FT_NULL);
 }

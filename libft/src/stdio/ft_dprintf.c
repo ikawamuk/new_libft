@@ -6,11 +6,12 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 20:53:41 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/07 21:04:48 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/07 21:45:45 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/stdarg.h"
+#include "libft/stdio.h"
+
 
 int	ft_dprintf(int fd, const char *format, ...)
 {

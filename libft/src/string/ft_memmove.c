@@ -6,13 +6,13 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 02:52:50 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/07 21:06:14 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/07 21:30:34 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/string.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, t_size n)
 {
 	unsigned char		*d;
 	const unsigned char	*s;

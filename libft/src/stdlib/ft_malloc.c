@@ -1,17 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vdpritf.c                                       :+:      :+:    :+:   */
+/*   ft_malloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/07 20:53:41 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/07 21:04:40 by ikawamuk         ###   ########.fr       */
+/*   Created: 2026/11/07 21:34:16 by ikawamuk          #+#    #+#             */
+/*   Updated: 2026/11/07 21:35:03 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/stdarg.h"
+#include "libft/stdlib.h"
+#include <stdlib.h>
 
-int	ft_vdprintf(int fd, const char *format, va_list ap)
+void	*ft_malloc(t_size size)
 {
+	return (malloc(size));
 }

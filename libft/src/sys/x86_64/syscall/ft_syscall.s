@@ -1,4 +1,5 @@
 global ft_syscall
+extern g_ft_errno
 section .text
 
 ft_syscall:

@@ -6,13 +6,13 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 03:27:33 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/07 03:28:43 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/07 21:30:34 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/string.h"
 
-size_t	ft_strlen(const char *s)
+t_size	ft_strlen(const char *s)
 {
 	const char	*head;
 
