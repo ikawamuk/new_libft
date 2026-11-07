@@ -6,12 +6,14 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 05:49:48 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/07 21:15:28 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 02:16:39 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ERRNO_H
 # define ERRNO_H
+
+# include "sys/errno.h"
 
 extern int	g_ft_errno;
 

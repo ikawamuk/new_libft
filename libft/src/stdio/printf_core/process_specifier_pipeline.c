@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 23:14:41 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 01:38:58 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 02:40:23 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,10 @@
 #include "printf_internal.h"
 #include <stdlib.h>
 
-int		parse_format(const char **fmt);
+int		parse_format(t_option *option, const char **fmt);
 int		retrieve_argument(t_arg *argument, va_list *ap, t_option *option);
 int		convert_number(char **num_str, t_arg *argument, t_option *option);
 long	output(char *num_str, t_option *option);
-
-static void	init_option(t_option *option);
 
 long	process_specifier_pipeline(int fd, const char **fmt, va_list ap)
 {
@@ -30,10 +28,10 @@ long	process_specifier_pipeline(int fd, const char **fmt, va_list ap)
 	long		ret;
 
 	++(*fmt);
-	init_option(&option);
+	ft_memset(&option, 0, sizeof(t_option));
 	ft_memset(&argument, 0, sizeof(t_arg));
 	num_str = 0;
-	if (parse_format(fmt) < 0)
+	if (parse_format(&option, fmt) < 0)
 		return (-1);
 	if (retrieve_argument(&argument, &ap, &option) < 0)
 		return (-1);
@@ -42,11 +40,4 @@ long	process_specifier_pipeline(int fd, const char **fmt, va_list ap)
 	ret = output(&num_str, &option);
 	free(num_str);
 	return (ret);
-}
-
-static void	init_option(t_option *option)
-{
-	ft_memset(&option, 0, sizeof(t_option));
-	option->width = -1;
-	option->precision = -1;
 }

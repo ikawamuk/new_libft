@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 22:53:19 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/07 23:19:56 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 03:04:58 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ long	printf_core(int fd, const char **fmt, va_list ap)
 {
 	if (*fmt != '%')
 		return (output_char_literal(fd, fmt));
+	if (fmt[1] == '%')
+		return (output_char_literal(fd, ++fmt));
 	return (process_specifier_pipeline(fd, fmt, ap));
 }
 
