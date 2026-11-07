@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 00:39:37 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/07 05:39:00 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/07 21:10:15 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
-// void	*ft_memmem(const void *haystack, size_t haystacklen,\
-	const void *needle, size_t needlelen);
+// void	*ft_memmem(const void *haystack, size_t haystacklen, \
+// void *needle, size_t needlelen);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_mermchr(const void *s, int c, size_t n);

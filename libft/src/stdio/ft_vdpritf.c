@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 20:53:41 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/07 21:00:29 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/07 21:04:40 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,4 @@
 
 int	ft_vdprintf(int fd, const char *format, va_list ap)
 {
-	
 }

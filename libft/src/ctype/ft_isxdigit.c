@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 00:18:21 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/07 00:30:46 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/07 21:06:32 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_isxdigit(int c)
 {
-	return (ft_isdigit(c)|| ('a' <= c && c<= 'f') || ('A' <= c && c <= 'Z'));
+	return (ft_isdigit(c) || ('a' <= c && c <= 'f') || ('A' <= c && c <= 'Z'));
 }

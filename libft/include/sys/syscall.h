@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   syscall.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikawamuk <ikawamuk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 06:21:52 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/07 20:27:21 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/07 21:09:38 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SYS_SYCALL_H
-# define SYS_SYCALL_H
+#ifndef SYSCALL_H
+# define SYSCALL_H
 
-#define SYS_read    0
-#define SYS_write   1
-#define SYS_open    2
-#define SYS_close   3
+# define SYS_READ	0
+# define SYS_WRITE	1
+# define SYS_OPEN	2
+# define SYS_CLOSE	3
 
-long _ft_syscall(long number, long arg1, long arg2, long arg3, \
-	long arg4, long arg5, long arg6);
+// long	_ft_syscall(long number, long arg1, long arg2, long arg3, \
+// 	long arg4, long arg5, long arg6);
 
 #endif
