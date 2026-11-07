@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 23:25:47 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 04:10:44 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 05:03:05 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,6 @@
 # define PRINTF_INTERNAL_H
 
 # include "libft/stdbool.h"
-
-typedef union u_arg
-{
-	int				i;
-	unsigned int	u;
-	void			*p;
-}	t_arg;
 
 # define ALT_FORM 0b00001 // '#'
 # define ZERO_PAD 0b00010 // '0'
@@ -40,6 +33,14 @@ enum e_type
 	STR,
 	PTR,
 };
+
+typedef union u_arg
+{
+	enum e_type		type;
+	int				i;
+	unsigned int	u;
+	void			*p;
+}	t_arg;
 
 typedef struct s_option
 {
