@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/08 01:41:08 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 03:33:01 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 04:16:47 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@ static int	parse_width(t_option *option, const char **fmt);
 static int	parse_precision(t_option *option, const char **fmt);
 static int	parse_conversion(t_option *option, const char **fmt);
 
-static const unsigned char	g_conversion_table['z' - 'A' + 1] = {
-['c' - 'A'] = CHAR,
-['d' - 'A'] = INT,
-['i' - 'A'] = INT,
-['u' - 'A'] = U_INT,
-['x' - 'A'] = HEX_LOW,
-['X' - 'A'] = HEX_UP,
-['s' - 'A'] = STR,
-['p' - 'A'] = PTR
+static const unsigned char	g_conversion_table[128] = {
+['c'] = CHAR,
+['d'] = INT,
+['i'] = INT,
+['u'] = U_INT,
+['x'] = HEX_LOW,
+['X'] = HEX_UP,
+['s'] = STR,
+['p'] = PTR
 };
 
 static const unsigned char	g_flag_table[128] = {
@@ -55,14 +55,14 @@ int	parse_format(t_option *option, const char **fmt)
 
 static void	parse_flag(t_option *option, const char **fmt)
 {
-	unsigned char	flag_bit;
+	unsigned char	c;
 
+	c = (unsigned char)**fmt;
 	while (1)
 	{
-		flag_bit = g_flag_table[**fmt];
-		if (!flag_bit)
+		if (c >= 128 || !g_flag_table[c])
 			break ;
-		option->flag |= flag_bit;
+		option->flag |= g_flag_table[c];
 		++(*fmt);
 	}
 }
@@ -71,7 +71,7 @@ static int	parse_width(t_option *option, const char **fmt)
 {
 	if (**fmt == '*')
 	{
-		++*fmt;
+		++(*fmt);
 		option->arg_width = true;
 		return (0);
 	}
@@ -109,17 +109,15 @@ static int	parse_precision(t_option *option, const char **fmt)
 
 static int	parse_conversion(t_option *option, const char **fmt)
 {
-	if (**fmt - 'A' > 'z' - 'A')
+	unsigned char	c;
+
+	c = (unsigned char)**fmt;
+	if (c >= 128 || !g_conversion_table[c])
 	{
 		g_ft_errno = EINVAL;
 		return (-1);
 	}
-	option->conversion = g_conversion_table[**fmt];
-	if (!option->conversion)
-	{
-		g_ft_errno = EINVAL;
-		return (-1);
-	}
+	option->conversion = g_conversion_table[c];
 	++(*fmt);
 	return (0);
 }

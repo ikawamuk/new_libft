@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 23:25:47 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 03:23:28 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 04:10:44 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef union u_arg
 
 enum e_type
 {
+	INVALID,
 	CHAR,
 	INT,
 	U_INT,
