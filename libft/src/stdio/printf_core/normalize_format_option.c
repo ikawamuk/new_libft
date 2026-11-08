@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/08 09:07:58 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 09:10:41 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 12:21:09 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,13 @@ void	normalize_format_option(t_option *option)
 {
 	if (option->flag & LEFT_ADJ)
 		option->flag &= ~ZERO_PAD;
+	if (option->conversion == CHAR || option->conversion == STR)
+		option->flag &= ~ZERO_PAD;
 	if (option->precision >= 0
-		&& (option->conversion == INT || option->conversion == U_INT))
-		option->precision &= ~ZERO_PAD;
+		&& (option->conversion == INT
+			|| option->conversion == U_INT
+			|| option->conversion == HEX_LOW
+			|| option->conversion == HEX_UP))
+		option->flag &= ~ZERO_PAD;
 	return ;
 }

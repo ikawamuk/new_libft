@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/08 10:08:16 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 11:24:05 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 12:01:47 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ char	*utoa(unsigned int value, char *buffer, t_size buf_size);
 
 int	convert_unsigned_integer(t_field *field, const t_argument *argument)
 {
+	field->is_zero = (argument->i == 0);
 	field->base_str = utoa(argument->i, field->buffer, sizeof(field->buffer));
 	if (!field->base_str)
 		return (-1);

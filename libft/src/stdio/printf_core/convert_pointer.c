@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/08 10:08:16 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 11:55:56 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 12:02:03 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	convert_pointer(t_field *field, const t_argument *argument)
 {
+	field->is_zero = (argument->p == FT_NULL);
 	field->base_str = utoa_lower_hex(\
 		(unsigned long int)argument->p, field->buffer, sizeof(field->buffer));
 	if (!field->base_str)

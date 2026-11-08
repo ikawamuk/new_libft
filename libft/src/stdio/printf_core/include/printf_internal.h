@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 23:25:47 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 11:33:39 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 12:06:55 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,14 @@ typedef struct s_option
 
 typedef struct s_field
 {
-	char	buffer[1024];
-	char	*base_str;
-	t_size	base_len;
-	char	*prefix;
+	char		buffer[1024];
+	char		*base_str;
+	t_size		base_len;
+	BOOL		is_negative;
+	BOOL		is_zero;
+	const char	*prefix;
+	char		sign;
+	t_size		
 }	t_field;
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 23:14:41 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 11:23:07 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 11:59:56 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ int		retrieve_format_arguments(t_option *option, va_list *ap);
 void	normalize_format_option(t_option *option);
 void	pop_varg(t_argument *arg, enum e_type type, va_list ap);
 int		convert_argument(t_field *field, const t_argument *argument);
-long	output(const int fd, const t_field *field, const t_option *option);
+int		format_field(t_field *field, const t_option *option);
+long	output(const int fd, const t_field *field);
 
 long	process_specifier_pipeline(int fd, const char **fmt, va_list ap)
 {
@@ -40,5 +41,7 @@ long	process_specifier_pipeline(int fd, const char **fmt, va_list ap)
 	pop_varg(&argument, option.conversion, ap);
 	if (convert_argument(&field, &argument) < 0)
 		return (-1);
-	return (output(fd, &field, &option));
+	if (format_field(&field, &option) < 0)
+		return (-1);
+	return (output(fd, &field));
 }
