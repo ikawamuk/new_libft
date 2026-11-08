@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/08 03:34:04 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 05:07:41 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 09:07:05 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void		pop_varg(t_arg *arg, enum e_type type, va_list ap);
 
 static int	set_arg_width(t_option *option, int arg);
 
-int	retrieve_format_args(t_arg *argument, va_list *ap, t_option *option)
+int	retrieve_format_args(t_option *option, va_list *ap)
 {
 	if (option->arg_width)
 		if (set_arg_width(option, va_arg(*ap, int)) < 0)

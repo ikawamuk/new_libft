@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 23:14:41 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 05:08:20 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 09:18:24 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@
 
 int		parse_format(t_option *option, const char **fmt);
 int		retrieve_format_args(t_option *option, va_list *ap);
+void	normalize_format_option(t_option *option);
 void	pop_varg(t_arg *arg, enum e_type type, va_list ap);
 int		convert_argument(char **num_str, const t_arg *argument);
-long	output(int fd, char *num_str, t_option *option);
+long	output(const int fd, const char *num_str, const t_option *option);
 
 long	process_specifier_pipeline(int fd, const char **fmt, va_list ap)
 {
@@ -36,6 +37,7 @@ long	process_specifier_pipeline(int fd, const char **fmt, va_list ap)
 		return (-1);
 	if (retrieve_format_args(&option, ap) < 0)
 		return (-1);
+	normalize_format_option(&option);
 	pop_varg(&argument, option.conversion, ap);
 	if (convert_argument(&base_string, &argument) < 0)
 		return (-1);
