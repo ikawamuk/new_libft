@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 23:25:47 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 12:06:55 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 15:11:51 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ typedef struct s_field
 	BOOL		is_zero;
 	const char	*prefix;
 	char		sign;
-	t_size		
 }	t_field;
 
 #endif
