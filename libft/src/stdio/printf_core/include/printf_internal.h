@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 23:25:47 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 15:11:51 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 16:33:02 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,21 @@ typedef struct s_option
 	enum e_type		conversion;
 }	t_option;
 
-typedef struct s_field
+typedef struct s_base_string
 {
 	char		buffer[1024];
 	char		*base_str;
 	t_size		base_len;
-	BOOL		is_negative;
-	BOOL		is_zero;
-	const char	*prefix;
-	char		sign;
-}	t_field;
+}	t_base_str;
+
+typedef struct s_format
+{
+	const char		*prefix;
+	char			sign;
+	t_size			padding;
+	char			pad_char;
+	BOOL			is_left_adjust;
+	t_size			precision_zeros;
+}	t_format;
 
 #endif

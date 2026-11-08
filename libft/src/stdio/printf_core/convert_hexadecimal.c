@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/08 10:08:16 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 15:06:16 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 16:31:31 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,16 @@
 char	*utoa_upper_hex(unsigned int value, char *buffer, t_size buf_size);
 char	*utoa_lower_hex(unsigned int value, char *buffer, t_size buf_size);
 
-int	convert_hexadecimal(t_field *field, const t_argument *argument)
+int	convert_hexadecimal(t_base_str *base, const t_argument *argument)
 {
-	field->is_zero = (argument->i == 0);
 	if (argument->type == HEX_LOW)
-	{
-		field->base_str = utoa_lower_hex(\
-			argument->i, field->buffer, sizeof(field->buffer));
-		field->prefix = "0x";
-	}
+		base->base_str = utoa_lower_hex(\
+			argument->i, base->buffer, sizeof(base->buffer));
 	else if (argument->type == HEX_UP)
-	{
-		field->base_str = utoa_upper_hex(\
-			argument->i, field->buffer, sizeof(field->buffer));
-		field->prefix = "0X";
-	}
-	if (!field->base_str)
+		base->base_str = utoa_upper_hex(\
+			argument->i, base->buffer, sizeof(base->buffer));
+	if (!base->base_str)
 		return (-1);
-	field->base_len = ft_strlen(field->base_str);
+	base->base_len = ft_strlen(base->base_str);
 	return (0);
 }
