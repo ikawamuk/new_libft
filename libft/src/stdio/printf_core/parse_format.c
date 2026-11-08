@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/08 01:41:08 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 04:16:47 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 09:51:55 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static int	parse_width(t_option *option, const char **fmt)
 	if (**fmt == '*')
 	{
 		++(*fmt);
-		option->arg_width = true;
+		option->arg_width = TRUE;
 		return (0);
 	}
 	option->width = parse_int(fmt);
@@ -94,7 +94,7 @@ static int	parse_precision(t_option *option, const char **fmt)
 	if (fmt[0] == '.' && fmt[1] == '*')
 	{
 		*fmt += 2;
-		option->arg_precision = true;
+		option->arg_precision = TRUE;
 		return (-1);
 	}
 	++(*fmt);
