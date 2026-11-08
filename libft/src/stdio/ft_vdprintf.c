@@ -6,12 +6,12 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 20:53:41 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 16:54:43 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 17:55:27 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/stdio.h"
-#include "libft/limits.h"
+#include <limits.h>
 
 long	printf_core(int fd, const char **fmt, va_list ap);
 

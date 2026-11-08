@@ -6,7 +6,7 @@
 #    By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/07 21:52:32 by ikawamuk          #+#    #+#              #
-#    Updated: 2026/11/07 21:52:32 by ikawamuk         ###   ########.fr        #
+#    Updated: 2026/11/08 17:58:13 by ikawamuk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CC          := cc
 ASM         := nasm
 
 CFLAGS      := -Wall -Wextra -Werror -g
-CPPFLAGS    := -I../libft/include
+CPPFLAGS    := -I../libft/include/libft/
 LDFLAGS     := -nostdlib -pie
 
 LIBFT_DIR   := ../libft
@@ -62,6 +62,8 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 
-re: fclean all
+re: fclean
+	$(MAKE) -C ../libft re
+	$(MAKE) all
 
 -include $(DEPS)

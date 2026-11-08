@@ -6,7 +6,7 @@
 #    By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/07 06:16:33 by ikawamuk          #+#    #+#              #
-#    Updated: 2026/11/08 16:57:45 by ikawamuk         ###   ########.fr        #
+#    Updated: 2026/11/08 17:31:52 by ikawamuk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CC          := cc
 ASM         := nasm
 AR          := ar
 
-CFLAGS      := -Wall -Wextra -Werror -g
+CFLAGS      := -Wall -Wextra -Werror -g -fPIE
 CPPFLAGS    := -Iinclude -Isrc/stdio/printf_core/include
 ASMFLAGS    := -f elf64
 
@@ -57,6 +57,3 @@ fclean: clean
 re: fclean all
 
 -include $(DEPS)
-
-
-

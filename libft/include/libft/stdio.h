@@ -6,14 +6,14 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 20:29:16 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/07 21:30:34 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 17:13:06 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STDIO_H
 # define STDIO_H
 
-# include "stdarg.h"
+# include <stdarg.h>
 // # include "stddef.h"
 
 int	ft_printf(const char *format, ...);

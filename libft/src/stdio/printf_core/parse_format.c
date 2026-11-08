@@ -6,12 +6,10 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/08 01:41:08 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 16:58:36 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 17:52:25 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/ctype.h"
-#include "libft/limits.h"
 #include "libft/errno.h"
 #include "printf_internal.h"
 
@@ -57,9 +55,9 @@ static void	parse_flag(t_option *option, const char **fmt)
 {
 	unsigned char	c;
 
-	c = (unsigned char)**fmt;
 	while (1)
 	{
+		c = (unsigned char)**fmt;
 		if (c >= 128 || !g_flag_table[c])
 			break ;
 		option->flag |= g_flag_table[c];
@@ -95,7 +93,7 @@ static int	parse_precision(t_option *option, const char **fmt)
 	{
 		*fmt += 2;
 		option->arg_precision = TRUE;
-		return (-1);
+		return (0);
 	}
 	++(*fmt);
 	option->precision = parse_int(fmt);

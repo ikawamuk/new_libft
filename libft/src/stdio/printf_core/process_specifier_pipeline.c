@@ -6,12 +6,12 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 23:14:41 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 16:56:31 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 17:13:46 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/string.h"
-#include "libft/stdarg.h"
+#include <stdarg.h>
 #include "printf_internal.h"
 
 int		parse_format(t_option *option, const char **fmt);

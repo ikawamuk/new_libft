@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   limits.h                                           :+:      :+:    :+:   */
+/*   stdint.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/07 22:51:40 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/07 22:52:22 by ikawamuk         ###   ########.fr       */
+/*   Created: 2026/11/08 17:43:29 by ikawamuk          #+#    #+#             */
+/*   Updated: 2026/11/08 17:52:42 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIMITS_H
-# define LIMITS_H
+#ifndef STDINT_H
+# define STDINT_H
 
-# define INT_MAX	2147483647
+typedef int					t_int32;
+typedef long int			t_int64;
+
+typedef unsigned int		t_uint32;
+typedef unsigned long int	t_uint64;
 
 #endif

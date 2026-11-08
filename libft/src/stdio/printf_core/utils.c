@@ -6,15 +6,16 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/08 02:18:00 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 16:59:50 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 17:55:27 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/limits.h"
+#include <limits.h>
 #include "libft/stddef.h"
 #include "libft/ctype.h"
-#include "libft/limits.h"
+#include <limits.h>
 #include "libft/string.h"
+#include "libft/stdint.h"
 
 int	parse_int(const char **s)
 {
@@ -33,10 +34,10 @@ int	parse_int(const char **s)
 }
 
 char	*utoa_base(\
-	unsigned int value, char *buffer, t_size buf_size, const char *base)
+	t_uint64 value, char *buffer, t_size buf_size, const char *base)
 {
 	unsigned int	radix;
-	unsigned int	tmp;
+	t_uint64		tmp;
 	t_size			len;
 
 	radix = ft_strlen(base);
@@ -60,17 +61,17 @@ char	*utoa_base(\
 	return (buffer);
 }
 
-char	*utoa(unsigned int value, char *buffer, t_size buf_size)
+char	*utoa(t_uint64 value, char *buffer, t_size buf_size)
 {
 	return (utoa_base(value, buffer, buf_size, "0123456789"));
 }
 
-char	*utoa_upper_hex(unsigned int value, char *buffer, t_size buf_size)
+char	*utoa_upper_hex(t_uint64 value, char *buffer, t_size buf_size)
 {
 	return (utoa_base(value, buffer, buf_size, "0123456789ABCDEF"));
 }
 
-char	*utoa_lower_hex(unsigned int value, char *buffer, t_size buf_size)
+char	*utoa_lower_hex(t_uint64 value, char *buffer, t_size buf_size)
 {
 	return (utoa_base(value, buffer, buf_size, "0123456789abcdef"));
 }

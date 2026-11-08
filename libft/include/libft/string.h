@@ -6,15 +6,15 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 00:39:37 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/07 21:31:39 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 17:10:53 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRING_H
 # define STRING_H
 
-# include "libft/stddef.h"
-# include "libft/stdlib.h"
+# include "stddef.h"
+# include "stdlib.h"
 
 // void	*ft_memccpy(void *dest, const void *src, int c, t_size n);
 void	*ft_memchr(const void *s, int c, t_size n);
