@@ -6,21 +6,24 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/08 02:18:00 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 16:25:45 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 16:59:50 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/limits.h"
 #include "libft/stddef.h"
+#include "libft/ctype.h"
+#include "libft/limits.h"
+#include "libft/string.h"
 
-int	parse_int(char **s)
+int	parse_int(const char **s)
 {
 	int	n;
 
 	n = 0;
 	while (ft_isdigit(**s))
 	{
-		if (n > INT_MAX / 10U || (**s - '0') > INT_MAX - 10 * n)
+		if (n > INT_MAX / 10 || (**s - '0') > INT_MAX - 10 * n)
 			n = -1;
 		else
 			n = 10 * n + (**s - '0');

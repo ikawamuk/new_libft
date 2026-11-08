@@ -6,25 +6,24 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 23:14:41 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 16:36:09 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 16:56:31 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/string.h"
 #include "libft/stdarg.h"
 #include "printf_internal.h"
-#include "libft/limits.h"
 
 int		parse_format(t_option *option, const char **fmt);
-int		retrieve_format_arguments(t_option *option, va_list *ap);
+int		retrieve_format_arguments(t_option *option, va_list ap);
 void	normalize_format_option(t_option *option);
-void	pop_varg(t_argument *arg, enum e_type type, va_list *ap);
+void	pop_varg(t_argument *arg, enum e_type type, va_list ap);
 int		convert_argument(t_base_str *base, const t_argument *argument);
 int		set_format(t_format *format, t_base_str *base_string,
 			const t_option *option, const t_argument *argument);
 long	output(int fd, const t_base_str *base, const t_format *format);
 
-long	process_specifier_pipeline(int fd, const char **fmt, va_list *ap)
+long	process_specifier_pipeline(int fd, const char **fmt, va_list ap)
 {
 	t_option	option;
 	t_argument	argument;

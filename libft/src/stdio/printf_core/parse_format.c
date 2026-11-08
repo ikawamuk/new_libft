@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/08 01:41:08 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 09:51:55 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 16:58:36 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "libft/errno.h"
 #include "printf_internal.h"
 
-int			parse_int(char **s);
+int			parse_int(const char **s);
 
 static void	parse_flag(t_option *option, const char **fmt);
 static int	parse_width(t_option *option, const char **fmt);
@@ -86,12 +86,12 @@ static int	parse_width(t_option *option, const char **fmt)
 
 static int	parse_precision(t_option *option, const char **fmt)
 {
-	if (fmt[0] != '.')
+	if ((*fmt)[0] != '.')
 	{
 		option->precision = -1;
 		return (0);
 	}
-	if (fmt[0] == '.' && fmt[1] == '*')
+	if ((*fmt)[0] == '.' && (*fmt)[1] == '*')
 	{
 		*fmt += 2;
 		option->arg_precision = TRUE;

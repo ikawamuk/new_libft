@@ -6,12 +6,13 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/08 16:07:01 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 16:34:18 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 17:03:20 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf_internal.h"
 #include "libft/limits.h"
+#include "libft/string.h"
 
 static t_size	count_content_length(t_format *format, const t_base_str *base);
 

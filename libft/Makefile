@@ -6,7 +6,7 @@
 #    By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/07 06:16:33 by ikawamuk          #+#    #+#              #
-#    Updated: 2026/11/07 21:28:59 by ikawamuk         ###   ########.fr        #
+#    Updated: 2026/11/08 16:57:45 by ikawamuk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ ASM         := nasm
 AR          := ar
 
 CFLAGS      := -Wall -Wextra -Werror -g
-CPPFLAGS    := -Iinclude
+CPPFLAGS    := -Iinclude -Isrc/stdio/printf_core/include
 ASMFLAGS    := -f elf64
 
 SRC_DIR     := src

@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 20:53:41 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 15:53:10 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 16:54:43 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_vdprintf(int fd, const char *format, va_list ap)
 	total_len = 0;
 	while (*format)
 	{
-		output_count = printf_core(fd, &format, &ap);
+		output_count = printf_core(fd, &format, ap);
 		if (output_count < 0)
 			return (-1);
 		if (output_count > INT_MAX - total_len)

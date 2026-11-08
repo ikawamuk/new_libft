@@ -6,13 +6,14 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/08 16:06:12 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 16:35:35 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 17:03:09 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf_internal.h"
 #include "libft/limits.h"
 #include "libft/errno.h"
+#include "libft/string.h"
 
 static int	set_string_length(t_base_str *base, const t_option *option);
 static BOOL	is_integer_type(enum e_type type);
@@ -56,7 +57,7 @@ static void	set_integer_precision(t_format *format, t_base_str *base,
 {
 	if (option->precision < 0)
 		return ;
-	if (option->precision == 0 && is_zero_argument(argument))
+	if (option->precision == 0 && argument->i == 0)
 	{
 		base->base_len = 0;
 		return ;

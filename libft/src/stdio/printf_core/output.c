@@ -6,12 +6,20 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/08 15:24:08 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 16:50:36 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 17:04:17 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf_internal.h"
 #include "libft/sys/types.h"
+#include "libft/string.h"
+#include "libft/unistd.h"
+
+static long	output_content(int fd, const t_base_str *base,
+				const t_format *fmt);
+static long	write_all(int fd, const char *str, t_size len);
+static long	write_padding(int fd, char c, t_size len);
+static int	append(long *total, long ret);
 
 long	output(int fd, const t_base_str *base, const t_format *fmt)
 {
@@ -64,7 +72,7 @@ static long	write_all(int fd, const char *str, t_size len)
 	total = 0;
 	while (total < len)
 	{
-		ret = write(fd, str + total, len - total);
+		ret = ft_write(fd, str + total, len - total);
 		if (ret <= 0)
 			return (-1);
 		total += ret;

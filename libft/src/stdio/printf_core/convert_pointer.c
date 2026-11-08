@@ -6,15 +6,17 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/08 10:08:16 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/08 16:31:31 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/08 17:00:48 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf_internal.h"
+#include "libft/string.h"
+
+char	*utoa_lower_hex(unsigned int value, char *buffer, t_size buf_size);
 
 int	convert_pointer(t_base_str *base, const t_argument *argument)
 {
-	base->is_zero = (argument->p == FT_NULL);
 	if (!argument->p)
 	{
 		base->base_str = "(nil)";
