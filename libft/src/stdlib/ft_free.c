@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 21:35:15 by ikawamuk          #+#    #+#             */
-/*   Updated: 2026/11/07 21:35:52 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2026/11/10 23:10:52 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 
 void	ft_free(void *ptr)
 {
+	// tmp
 	return (free(ptr));
 }
